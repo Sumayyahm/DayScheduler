@@ -19,7 +19,13 @@ body {
     color: black;
     border-radius: 0;
     border-bottom: 10px solid black;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
+  }
+
+  .display-3 {
+      font-size: 50px;
   }
   
   .description{
@@ -65,6 +71,17 @@ body {
     border-right: 1px solid grey;
     padding-top: 25px;
     text-align: right;
+  }
+
+  .navbar{
+      background-color: lightsalmon;
+  }
+
+  .footer {
+      background-color: lightsalmon;
+      color: black;
+      font-size: 10px;
+      padding-top: 20px;
   }
   
   .to-do {
