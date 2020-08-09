@@ -126,15 +126,73 @@ function colorChange() {
 
     for (var i = 0; i < todoArray.length; i++)
     todoArray[i].addClass("past");
-    todoArray[i].removeClass("present");
-    todoArray[i].removeClass("future");
+    // todoArray[i].removeClass("present");
+    // todoArray[i].removeClass("future");
   }
  
 }
 
+var inputBoxId;
+var inputReceived;
+var inputIndex = 0;
+var storedObjArr = [];
+$("#box9").text("Yo Whats up");
+
 //Calling the colorChange function
 colorChange();
+retreiveInfo();
 
+
+$(".saveBtn").on("click", function(){
+    event.preventDefault();
+ inputReceived = $(this).prev().find("input").val();
+ console.log($(this).attr("id"));
+ console.log(inputReceived);
+ inputBoxId = $(this).prev().find("input").attr("id");
+console.log(inputBoxId);
+
+ if(inputReceived === ""){
+     return;
+ }
+else{
+    for(var index =0 ; index < todoArray.length; index++)
+    {
+        var id = todoArray[index].attr("id");
+        if(inputBoxId.valueOf() == id.valueOf())
+        {inputIndex= index;
+        break;
+        }
+    }
+
+    var myStoredObj = {
+        todoText : inputReceived,
+        todoInd : inputIndex
+    };
+
+    storedObjArr.push(myStoredObj);
+   
+
+     
+    localStorage.setItem("storedObjArr", JSON.stringify(storedObjArr));
+    retreiveInfo();
+}
+});
+
+
+function retreiveInfo() {
+    var myRetArr = JSON.parse(localStorage.getItem("storedObjArr"));
+     if (myRetArr !== null) 
+     {   console.log(myRetArr.length);
+         for( var i = 0; i < myRetArr.length; i++)
+          {var j = myRetArr[i].todoInd;
+          var inputArr = myRetArr[i].todoText;
+          console.log(j);
+          var k = j + 1;
+          console.log(k);
+          console.log(inputArr);
+          }
+     } 
+}
 
 
 
