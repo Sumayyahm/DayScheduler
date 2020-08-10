@@ -17,6 +17,11 @@ var todoBox6 = $("#box6");
 var todoBox7 = $("#box7");
 var todoBox8 = $("#box8");
 var todoBox9 = $("#box9");
+//Initializing variables for User Input, Box id and Index to store in the local sstorage array
+var inputBoxId;
+var inputReceived;
+var inputIndex = 0;
+var storedObjArr = [];
 
 //Initialising an array of todoBoxes
 var todoArray = [todoBox1, todoBox2, todoBox3, todoBox4, todoBox5, todoBox6, todoBox7, todoBox8, todoBox9];
@@ -126,23 +131,17 @@ function colorChange() {
 
     for (var i = 0; i < todoArray.length; i++)
     todoArray[i].addClass("past");
-    // todoArray[i].removeClass("present");
-    // todoArray[i].removeClass("future");
   }
  
 }
 
-var inputBoxId;
-var inputReceived;
-var inputIndex = 0;
-var storedObjArr = [];
-$("#box9").text("Yo Whats up");
 
 //Calling the colorChange function
+// addPlaceholder();
 colorChange();
 retreiveInfo();
 
-
+//Storing the user input when the save btn is clicked and storing the input in the local storage
 $(".saveBtn").on("click", function(){
     event.preventDefault();
  inputReceived = $(this).prev().find("input").val();
@@ -170,7 +169,7 @@ else{
     };
 
     storedObjArr.push(myStoredObj);
-   
+    myStoredObj = "";
 
      
     localStorage.setItem("storedObjArr", JSON.stringify(storedObjArr));
@@ -178,20 +177,24 @@ else{
 }
 });
 
-
+//Function to display todos from the local storage 
 function retreiveInfo() {
-    var myRetArr = JSON.parse(localStorage.getItem("storedObjArr"));
-     if (myRetArr !== null) 
-     {   console.log(myRetArr.length);
-         for( var i = 0; i < myRetArr.length; i++)
-          {var j = myRetArr[i].todoInd;
-          var inputArr = myRetArr[i].todoText;
+    storedObjArr = JSON.parse(localStorage.getItem("storedObjArr"));
+     if (storedObjArr !== null) 
+     {   console.log(storedObjArr.length);
+         for( var i = 0; i < storedObjArr.length; i++)
+          {var j = storedObjArr[i].todoInd;
+          var inputArr = storedObjArr[i].todoText;
           console.log(j);
           var k = j + 1;
           console.log(k);
           console.log(inputArr);
-          }
+          $("#box" + k).attr("placeholder" , inputArr);
+          }    
      } 
+     else{
+         storedObjArr = []
+;     }
 }
 
 

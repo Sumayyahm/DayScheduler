@@ -72,6 +72,11 @@ body {
     color: white;
   }
   
+  .present::placeholder{
+    color: white;
+  }
+ 
+  
   .future {
     border: none;
     background-color: green;
@@ -80,6 +85,10 @@ body {
     padding-top: 25px;
     padding-bottom: 27px;
     padding-left: 3px;
+    color: white;
+  }
+
+  .future::placeholder{
     color: white;
   }
 
@@ -92,6 +101,9 @@ body {
     padding-bottom: 27px;
     padding-left: 3px;
     color: black;
+}
+.past::placeholder {
+  color: black;
 }
 
   .time {
