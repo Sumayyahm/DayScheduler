@@ -12,3 +12,10 @@ In this Homework,
    c. defined and called colorChange() function that uses switch-case statements to change the color of the time block indicating past(grey), present (red) and future (green) 
    d. defined and called a retreiveInfo() function that gets stored user input from local storage and displays it in the time blocks
    e. added a onclick function that takes the user input from the time block and stores it in the local storage 
+   
+   
+   
+   URL of the deployed application :  https://sumayyahm.github.io/DayScheduler/
+   
+   Screenshot:
+   ![image](https://user-images.githubusercontent.com/66535567/89926884-18d9ea80-dbcb-11ea-89e7-f34fb159ae35.png)
