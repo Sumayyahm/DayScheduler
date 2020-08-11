@@ -141,7 +141,7 @@ function colorChange() {
 colorChange();
 retreiveInfo();
 
-//Storing the user input when the save btn is clicked and storing the input in the local storage
+//Takes the user input when the save btn is clicked and stores the input in the local storage
 $(".saveBtn").on("click", function(){
     event.preventDefault();
  inputReceived = $(this).prev().find("input").val();
