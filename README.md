@@ -18,4 +18,4 @@ In this Homework,
    URL of the deployed application :  https://sumayyahm.github.io/DayScheduler/
    
    Screenshot:
-   ![image](https://user-images.githubusercontent.com/66535567/89926884-18d9ea80-dbcb-11ea-89e7-f34fb159ae35.png)
+  ![image](https://user-images.githubusercontent.com/66535567/89927435-eb417100-dbcb-11ea-9202-0d017ac69edf.png)
